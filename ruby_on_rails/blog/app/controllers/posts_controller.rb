@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   # http://carnal0wnage.attackresearch.com/2013/05/rails-strong-parameters.html
   
   def index    
-  
+    @posts = Post.all # get all posts and store them in this te @posts instance variable. then we can have access to this variable inside our view file to display these posts in the browser
   end
   
   #----------- 7 different actions
