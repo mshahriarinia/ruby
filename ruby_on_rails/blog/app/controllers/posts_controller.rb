@@ -14,5 +14,30 @@ class PostsController < ApplicationController
   
   end
   
+  #----------- 7 different actions
+  def show  # show indivisual post
+  
+  end
+  
+  def new # display a anew form to create  a new post
+  
+  end
+  
+  def create # form from the new action will submit to and this will save the post into the datasbe
+  
+  end
+  
+  def edit # display a form for editing the pst
+  
+  end
+  
+  def update # to actually updatign a post. the form on edit page ill submit to the update action and this will update that post in the datasbe
+  
+  end
+  
+  def destroy # to delete a post
+  
+  end
+  
   
 end
