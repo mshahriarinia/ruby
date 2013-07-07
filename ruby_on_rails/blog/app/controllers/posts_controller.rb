@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   end
   
   def new # display a anew form to create  a new post
+  # 'new' action used to display a form so that one can create a post
   
   end
   
