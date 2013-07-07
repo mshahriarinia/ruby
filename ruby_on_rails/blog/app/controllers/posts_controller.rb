@@ -16,7 +16,8 @@ class PostsController < ApplicationController
   
   #----------- 7 different actions
   def show  # show indivisual post
-  
+    @post = Post.find(params[:id])  #Params hash and grab the id that was passsed-in through the URL.
+    # Note that INSTANCE VARIABLES ARE ACCESSIBLE INSIDE OUR VIEW FILE. 
   end
   
   def new # display a anew form to create  a new post
