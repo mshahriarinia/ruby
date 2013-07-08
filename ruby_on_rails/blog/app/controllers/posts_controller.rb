@@ -25,16 +25,43 @@ class PostsController < ApplicationController
     @post = Post.new   # this will accessible in our 'new' action view
   end
   
+  
+  
+  
+  
+  
+  
+  
   def create # form from the new action will submit to and this will save the post into the datasbe
-    @post = Post.new(params[:post])  #he actual post information that was submitted throguh the form. And we grab that through the params hash and we grab that post information. Now we have access to the post object that we save to the databse. 
-    
-    if @post.save    # returns true or false if save was successfull
-       redirect_to posts_path, :notice => "Your post was saved."    # if was successfully saved. redirect to the named rout for the index action view.
-       # notice is a flash message and we need to make sure we handle flash messages. Edit the layout file.
+    @post = Post.create( params.require(:post).permit(:title, :content))
+
+    if @post
+      redirect_to posts_path, :notice => "Your post was saved."
     else
-      render "new"      # save has been usuccessfull. render the new form again so that the user can try again
+      render "new"
     end
+
   end
+
+
+
+  #@post = Post.create( params.require(:post).permit(:title, :content))
+   # @post = Post.new(params[:post])  #he actual post information that was submitted throguh the form. And we grab that through the params hash and we grab that post information. Now we have access to the post object that we save to the databse. 
+    
+    #if @post.save    # returns true or false if save was successfull
+     #  redirect_to posts_path, :notice => "Your post was saved."    # if was successfully saved. redirect to the named rout for the index action view.
+       # notice is a flash message and we need to make sure we handle flash messages. Edit the layout file.
+    #else
+    #  render "new"      # save has been usuccessfull. render the new form again so that the user can try again
+    #end
+  #end
+  
+  
+  
+  
+  
+  
+  
   
   def edit # display a form for editing the pst
   
