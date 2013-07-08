@@ -1,1 +1,19 @@
 <h1>Add a New Post</h1>
+
+<%= form_for @post do |f| %> <!--Pass to it the empty post object that we created in the 'new' action in the controller. It takes a block that is used to creatign a form.-->
+  <!--Here we have access to this local f variable. Create form fields for enterign a  new post.-->
+  <p>
+    <%= f.label :title %> <br/>  <!--Create a label tag for the title.-->
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+    <%= f.label :content %> <br/>  <!--for the content.-->
+    <%= f.text_area :content %>
+  </p>
+  
+  <p>  
+    <%= f.submit "Add a New Post" %>   <!--Submit button.-->
+  </p>
+
+<% end %> <!--end the block-->

@@ -20,9 +20,9 @@ class PostsController < ApplicationController
     # Note that INSTANCE VARIABLES ARE ACCESSIBLE INSIDE OUR VIEW FILE. 
   end
   
-  def new # display a anew form to create  a new post
-  # 'new' action used to display a form so that one can create a post
-  
+  def new # display a anew form to create  a new post. 'new' action used to display a form so that one can create a post
+  # the 'new' action displays the form, that form requires an empty post object in order to create the new post, so we need to send an empty post object to the view. So we create a post instance variable, and assign a new empty post object
+    @post = Post.new   # this will accessible in our 'new' action view
   end
   
   def create # form from the new action will submit to and this will save the post into the datasbe
