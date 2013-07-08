@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html>  <!--All of our views will conform to this layout structure.-->
 <head>
   <title>Blog</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -8,7 +8,12 @@
 </head>
 <body>
 
-<%= yield %>
+<%= flash.each do |key, value| %> <!--We have access to this flash hash amd loop through it and pass it a block access its key and values-->
+  <p><%= value %></p>  <!--key is hte type of message, value is The actual message itself.-->
+   <!---->
+<% end %>
+
+<%= yield %>    <!--This means whatever is in our view will be output in this location in the layout file.-->
 
 </body>
 </html>
