@@ -3,6 +3,7 @@
 <% @posts.each do |post| %>    <!-- loop through posts. posts is a hash that is retrieved from the datasbe in the ./app/controllers/post_controller.rb in the index action method.-->
 	<h2> <%= link_to post.title, post %> </h2>   <!--link_to method text, id or object to get its show URL-->
 	<p> <%= post.content %></p>
+    <p> <%= link_to "Edit", edit_post_path(post) %></p>
 	<hr/>
 <% end %>      <!-- close the loop block-->
 
