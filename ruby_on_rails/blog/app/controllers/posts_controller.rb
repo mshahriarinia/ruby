@@ -33,12 +33,12 @@ class PostsController < ApplicationController
   
   
   def create # form from the new action will submit to and this will save the post into the datasbe
-    @post = Post.create( params.require(:post).permit(:title, :content))
+    @post = Post.new( params.require(:post).permit(:title, :content))
 
-    if @post
+    if @post.save
       redirect_to posts_path, :notice => "Your post was saved."
     else
-      render "new"
+      render :action => "new"
     end
 
   end
