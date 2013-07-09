@@ -64,11 +64,17 @@ class PostsController < ApplicationController
   
   
   def edit # display a form for editing the pst
-  
+    @post = Post.find(params[:id])
   end
   
   def update # to actually updatign a post. the form on edit page ill submit to the update action and this will update that post in the datasbe
-  
+    @post = Post.find(params[:id])
+
+    if @post.update_attributes(params[:post])
+      redirect_to posts_path, :notice => "Your post has been updaetd"
+    else
+      render "edit"
+    end
   end
   
   def destroy # to delete a post
