@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end -%>
+
 <%= yield %>    <!--This means whatever is in our view will be output in this location in the layout file.-->
 
 </body>
