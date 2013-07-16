@@ -2,4 +2,5 @@
 
 Sample rails web app containing users and microposts and a basic user has_many microposts relationship.
 
+Tutorial: http://ruby.railstutorial.org/chapters/a-demo-app#top
 
