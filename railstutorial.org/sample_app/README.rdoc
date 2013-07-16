@@ -1,5 +1,11 @@
 == README
 
+sample_app followoing tutorial from http://ruby.railstutorial.org/chapters/static-pages?version=4.0#top
+
+
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
