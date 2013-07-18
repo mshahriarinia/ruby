@@ -17,6 +17,14 @@ describe "StaticPages" do
       expect(page).to have_content('Sample App')  # when you visit the Home page at /static_pages/home, the content should contain the words “Sample App”
     end
   end
+
+  describe "Help page" do
+
+    it "should have the content 'Help'" do
+      visit '/static_pages/help'
+      expect(page).to have_content('Help')
+    end
+  end
 end
 
 # What goes inside the quote marks is irrelevant to RSpec, and is intended to be descriptive to human readers.
