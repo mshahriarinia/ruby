@@ -1,6 +1,13 @@
-<h1>Sample App</h1>
-<p>
-  This is the home page for the
-  <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
-</p>
+<div class="center hero-unit">
+  <h1>Welcome to the Sample App</h1>
+
+  <h2>
+    This is the home page for the
+    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+    sample application.
+  </h2>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>        <!--Bootstrap framework names-->
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>   <!--image_tag takes as arguments the path to an image and an optional options hash, here alt attribute of the image tag. Download and place rails.png logo to app/assets/images/-->

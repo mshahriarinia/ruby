@@ -2,13 +2,31 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all",
+                          "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->                                    <!--HTML if statement to add javascript for old IEs that don't support HTML5-->
 </head>
 <body>
-
-<%= yield %>
-
+<header class="navbar navbar-fixed-top navbar-inverse">           <!--Class names have special meaning at Bootstrap framework-->
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "sample app", '#', id: "logo" %>                <!--Optional hash argument, here specifying id of the anchor. Later used for styling-->
+      <nav>
+        <ul class="nav pull-right">                              <!--nav and pull-right classes on the ul tag have special meaning to Bootstrap-->
+          <li><%= link_to "Home",    '#' %></li>                  <!--These link_to URLs will be given at later commits.-->
+          <li><%= link_to "Help",    '#' %></li>
+          <li><%= link_to "Sign in", '#' %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <%= yield %>                     <!--the yield method inserts the contents of each page into the site layout-->
+</div>
 </body>
 </html>
